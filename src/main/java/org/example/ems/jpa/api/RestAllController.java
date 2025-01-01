@@ -6,14 +6,12 @@ import org.example.ems.jpa.model.Staff;
 import org.example.ems.jpa.service.StaffRepo;
 import org.example.ems.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 public class RestAllController {
     @Autowired
     private StaffRepo staffRepo ;
@@ -32,12 +30,17 @@ public class RestAllController {
     public  List<Employee> findWithName(@RequestParam(name = "name") String name) {
         return  cqt.getSimpleQuery(name);
     }
-    @GetMapping("allemp")
+    @GetMapping("/getAll")
     public  List<Employee> findAll() {
         return cqt.getAllEmployee();
     }
     @GetMapping("id")
-    private Employee findById(@RequestParam(name = "id") Long id) {
+    public Employee findById(@RequestParam(name = "id") Long id) {
         return cqt.findById(id);
     }
+    @DeleteMapping("/one/{id}")
+    public String deleteById(@PathVariable(name = "id") Long id) {
+        return  cqt.deleteById(id);
+    }
+
 }

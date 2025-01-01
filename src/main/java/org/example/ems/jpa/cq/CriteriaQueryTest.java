@@ -64,7 +64,11 @@ public class CriteriaQueryTest {
         Root<Employee> root = criteria.from(Employee.class);
         criteria.where(builder.equal(root.get("id"), id));
         int row = em.createQuery(criteria).executeUpdate();
-        return "Success";
+        if(row > 0) {
+            return  "success";
+        }else {
+            return "fail";
+        }
     }
 
     public Employee updateEmployee(Employee emp , Long id) {
@@ -76,6 +80,10 @@ public class CriteriaQueryTest {
        .set(root.get("lastName"), emp.getLastName())
        .set(root.get("email"), emp.getEmail());
        int row = em.createQuery(employeeCriteriaUpdate).executeUpdate();
-       return   em.getReference(Employee.class, id);
+        if (row > 0) {
+            return   em.getReference(Employee.class, id);
+        }else {
+            return  null ;
+        }
     }
 }
