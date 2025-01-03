@@ -9,6 +9,10 @@ import org.example.ems.jpa.model.Staff;
 import org.example.ems.jpa.service.AddressRepo;
 import org.example.ems.jpa.service.DepartmentRepo;
 import org.example.ems.jpa.service.StaffRepo;
+import org.example.ems.model.Product;
+import org.example.ems.model.User;
+import org.example.ems.repo.ProductRepo;
+import org.example.ems.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
@@ -24,11 +28,14 @@ public class EmsBackendApplication {
     private    DepartmentRepo departmentRepo;
     @Autowired
     private    StaffRepo staffRepo;
+    @Autowired
+    private ProductRepo productRepo;
+    @Autowired
+    private UserRepo userRepo;
 
     @Bean
     @Profile("dev")
      public ApplicationRunner applicationRunner () {
-
          return args -> {
              Address address = new Address("Yan Nyein Lane 3"  ,  "Yankin" , "Yangon" , "04444");
              addressRepo.save(address);
@@ -38,6 +45,16 @@ public class EmsBackendApplication {
 
              Staff staff = new Staff("Ko" , "Doi" , "mj@gmail.com" , EmployeeRole.DEVELOPER,address , department );
              staffRepo.save(staff);
+
+             Product product = new Product("Coca Cola" , 1500.00);
+             Product product2 = new Product("Pepsi" , 2000.00);
+
+             productRepo.save(product2);
+             productRepo.save(product);
+
+             User user = new User("Ko Region" , "region@gmail.com");
+             userRepo.save(user);
+
          };
      }
     public static void main(String[] args) {
