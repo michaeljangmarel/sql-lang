@@ -1,6 +1,6 @@
-package org.example.ems.jpa.service;
+package org.example.ems.custom.service;
 
-import org.example.ems.jpa.model.Department;
+import org.example.ems.custom.model.Department;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

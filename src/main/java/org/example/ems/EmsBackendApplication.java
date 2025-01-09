@@ -1,14 +1,12 @@
 package org.example.ems;
 
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import org.example.ems.jpa.model.Address;
-import org.example.ems.jpa.model.Department;
-import org.example.ems.jpa.model.EmployeeRole;
-import org.example.ems.jpa.model.Staff;
-import org.example.ems.jpa.service.AddressRepo;
-import org.example.ems.jpa.service.DepartmentRepo;
-import org.example.ems.jpa.service.StaffRepo;
+import org.example.ems.custom.model.Address;
+import org.example.ems.custom.model.Department;
+import org.example.ems.custom.model.EmployeeRole;
+import org.example.ems.custom.model.Staff;
+import org.example.ems.custom.service.AddressRepo;
+import org.example.ems.custom.service.DepartmentRepo;
+import org.example.ems.custom.service.StaffRepo;
 import org.example.ems.model.Product;
 import org.example.ems.model.User;
 import org.example.ems.repo.ProductRepo;
