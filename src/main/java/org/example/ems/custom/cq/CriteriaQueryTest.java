@@ -1,4 +1,4 @@
-package org.example.ems.jpa.cq;
+package org.example.ems.custom.cq;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;

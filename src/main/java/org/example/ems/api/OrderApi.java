@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/add/pro")
+@CrossOrigin("*")
 public class OrderApi {
     @Autowired
     private OrderService orderService ;

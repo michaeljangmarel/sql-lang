@@ -1,9 +1,9 @@
-package org.example.ems.jpa.api;
+package org.example.ems.custom.api;
 
-import org.example.ems.jpa.cq.CriteriaQueryTest;
-import org.example.ems.jpa.cq.ResultDto;
-import org.example.ems.jpa.model.Staff;
-import org.example.ems.jpa.service.StaffRepo;
+import org.example.ems.custom.cq.CriteriaQueryTest;
+import org.example.ems.custom.cq.ResultDto;
+import org.example.ems.custom.model.Staff;
+import org.example.ems.custom.service.StaffRepo;
 import org.example.ems.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

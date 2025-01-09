@@ -1,4 +1,4 @@
-package org.example.ems.jpa.model;
+package org.example.ems.custom.model;
 
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
