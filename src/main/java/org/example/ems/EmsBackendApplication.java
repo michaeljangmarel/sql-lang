@@ -1,5 +1,6 @@
 package org.example.ems;
 
+import jakarta.annotation.PostConstruct;
 import org.example.ems.custom.model.Address;
 import org.example.ems.custom.model.Department;
 import org.example.ems.custom.model.EmployeeRole;
@@ -17,6 +18,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
+
+import java.util.List;
+import java.util.stream.Stream;
 
 @SpringBootApplication
 public class EmsBackendApplication {
@@ -38,8 +42,14 @@ public class EmsBackendApplication {
              Address address = new Address("Yan Nyein Lane 3"  ,  "Yankin" , "Yangon" , "04444");
              addressRepo.save(address);
 
-             Department department = new Department("IT");
-             departmentRepo.save(department);
+             Department department = new Department("Information Technology");
+              Department department1 = new Department("HR");
+              Department department2 = new Department("Finance");
+              Department department3 = new Department("Head Office");
+              Department department4= new Department("Sale and Marketing");
+
+             List<Department> departments = List.of(department,department1, department2, department3 ,department4);
+             departmentRepo.saveAll(departments);
 
              Staff staff = new Staff("Ko" , "Doi" , "mj@gmail.com" , EmployeeRole.DEVELOPER,address , department );
              staffRepo.save(staff);
